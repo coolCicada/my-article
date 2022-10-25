@@ -269,6 +269,42 @@ module.exports = function (url, next) {
 }
 ```
 # 项目发布
+## package.json 设置
+
+设置 `bin` 用于命令行执行
+
+```json
+{
+  "name": "cool-vite",
+  "version": "1.1.3",
+  "description": "类vite的本地静态服务器",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "node lib/init.js",
+    "dev": "node index.js"
+  },
+  "bin": "./index.js",
+  "keywords": [
+    "vue"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vue/compiler-sfc": "^3.2.41",
+    "koa": "^2.13.4",
+    "qs": "^6.11.0",
+    "vue": "^3.2.36"
+  }
+}
+```
+
+## 可执行程序入口设置
+
+`index.js` 入口文件顶部添加
+```
+#!/usr/bin/env node
+```
 
 ## 登录
 
